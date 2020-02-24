@@ -172,6 +172,10 @@ function echo_info() {
     echo -e "${CYAN}${1} ${RESET}" > /dev/tty
 }
 
+function echo_replace() {
+    echo  -e "$1 \r\c" > /dev/tty
+}
+
 function trap_exit() {
     if [[ $? -ne 0 ]]; then
         block_error "An error has occurred."
